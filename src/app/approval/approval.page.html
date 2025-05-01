@@ -1,0 +1,68 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding approvals-page">
+    <div class="center-section">
+      <div class="title">Approvals Document</div>
+      <div class="pending-box">
+        <div class="pending-number">1</div>
+        <div class="pending-text">Menunggu<br />Persetujuan</div>
+      </div>
+    </div>
+
+    <ion-card>
+      <ion-card-header class="history-header">
+        <ion-card-title>Riwayat Pengajuan</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item>
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Surat Cuti</h2>
+              <p>HRD (DOCX)</p>
+            </ion-label>
+            <ion-text color="success">Disetujui</ion-text>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Surat Rekomendasi</h2>
+              <p>HRD (PDF)</p>
+            </ion-label>
+            <ion-text color="success">Disetujui</ion-text>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Surat Cuti</h2>
+              <p>HRD (PDF)</p>
+            </ion-label>
+            <ion-text color="danger">Ditolak</ion-text>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon name="star-outline" slot="start"></ion-icon>
+            <ion-label>
+              <h2>Surat Keluhan</h2>
+              <p>GA (DOCX)</p>
+            </ion-label>
+            <ion-text color="danger">Ditolak</ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

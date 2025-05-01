@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding profile-page">
+    <div class="profile-header">
+      <h2>Profile</h2>
+      <ion-icon name="person-circle-outline" class="profile-icon"></ion-icon>
+    </div>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="stacked">Nama Karyawan</ion-label>
+          <ion-input value="Piyan Setiawan" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">NIP</ion-label>
+          <ion-input value="123234345456567" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Jabatan</ion-label>
+          <ion-input value="Staff Administrasi" readonly></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input value="PiyanSetiawan32@gmail.com" readonly></ion-input>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>
