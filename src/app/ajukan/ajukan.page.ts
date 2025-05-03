@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SubmissionService } from '../services/submission.service';
 
 @Component({
   standalone: false,
@@ -10,7 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AjukanPage implements OnInit {
   suratType: string = '';
 
-  constructor(private route: ActivatedRoute, private router: Router) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private submissionService: SubmissionService
+  ) {}
 
   ngOnInit() {
     const param = this.route.snapshot.paramMap.get('type');
@@ -25,6 +30,15 @@ export class AjukanPage implements OnInit {
       .join(' ');
   }
   submitForm() {
+    this.submissionService.addSubmission({
+      judul: this.suratType,
+      dept: ['Keluhan'].includes(this.suratType) ? 'GA' : 'HRD',
+      ext: ['Rekomendasi', 'Ket-Kerja'].includes(this.suratType)
+        ? 'PDF'
+        : 'DOCX',
+      status: 'Menunggu',
+    });
+
     this.router.navigate(['/success'], {
       queryParams: { type: this.suratType },
     });

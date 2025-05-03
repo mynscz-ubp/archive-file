@@ -15,27 +15,13 @@
     <!-- Riwayat Pengajuan di bawah header -->
     <div class="submission-history-title">Riwayat Pengajuan</div>
 
-    <ion-card>
+    <ion-card *ngFor="let item of submissions">
       <ion-card-content>
-        <div class="card-detail">
-          <div><strong>Status</strong> : Diajukan</div>
-          <div><strong>Tanggal</strong> : 20-02-2026</div>
-          <div><strong>Nama Pengaju</strong> : Ahmad Muhammad</div>
-          <div><strong>Company</strong> : PT. JayaYajaya</div>
-          <div><strong>Catatan</strong> : -</div>
-        </div>
-      </ion-card-content>
-    </ion-card>
-
-    <ion-card>
-      <ion-card-content>
-        <div class="card-detail">
-          <div><strong>Status</strong> : Disetujui</div>
-          <div><strong>Tanggal</strong> : 21-02-2026</div>
-          <div><strong>Nama Pengaju</strong> : Ahmad Muhammad</div>
-          <div><strong>Company</strong> : PT. JayaYajaya</div>
-          <div><strong>Catatan</strong> : -</div>
-        </div>
+        <p><strong>Status</strong>: {{ item.status }}</p>
+        <p><strong>Tanggal</strong>: {{ item.tanggal }}</p>
+        <p><strong>Nama Pengaju</strong>: {{ item.nama }}</p>
+        <p><strong>Company</strong>: {{ item.company }}</p>
+        <p><strong>Catatan</strong>: {{ item.catatan }}</p>
       </ion-card-content>
     </ion-card>
   </ion-content>

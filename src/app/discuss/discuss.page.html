@@ -1,44 +1,25 @@
 <ion-content [fullscreen]="true">
   <ion-header>
-    <ion-toolbar>
+    <ion-toolbar color="dark">
       <ion-buttons slot="start">
-        <ion-button fill="clear" (click)="openMenu()">
-          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
-        </ion-button>
+        <ion-menu-button autoHide="false"></ion-menu-button>
       </ion-buttons>
-      <ion-title>Chat</ion-title>
-      <ion-buttons slot="end">
-        <ion-icon slot="icon-only" name="attach-outline"></ion-icon>
-        <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
-      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
     </ion-toolbar>
   </ion-header>
 
   <ion-content class="chat-content">
     <div class="message-list">
-      <div class="message-row received">
-        <div class="avatar"></div>
-        <div class="bubble">Hai</div>
-      </div>
-
-      <div class="message-row received">
-        <div class="avatar"></div>
-        <div class="bubble">Ada info?</div>
-      </div>
-
-      <div class="message-row received">
-        <div class="avatar"></div>
-        <div class="bubble image">
-          <img src="assets/icon/sample-content.png" />
-        </div>
-      </div>
-
-      <div class="message-row sent">
-        <div class="bubble">Iya ada!</div>
-      </div>
-
-      <div class="message-row sent">
-        <div class="bubble">Cek ya</div>
+      <div
+        *ngFor="let msg of messages"
+        class="message-row"
+        [ngClass]="msg.type"
+      >
+        <div *ngIf="msg.type === 'received'" class="avatar"></div>
+        <div class="bubble">{{ msg.text }}</div>
       </div>
     </div>
 
@@ -48,9 +29,11 @@
           <ion-icon name="add-outline"></ion-icon>
           <ion-icon name="happy-outline"></ion-icon>
         </ion-buttons>
-        <ion-input placeholder="Message"></ion-input>
+        <ion-input [(ngModel)]="newMessage" placeholder="Message"></ion-input>
         <ion-buttons slot="end">
-          <ion-icon name="mic-outline"></ion-icon>
+          <ion-button (click)="sendMessage()">
+            <ion-icon name="send-outline"></ion-icon>
+          </ion-button>
         </ion-buttons>
       </ion-item>
     </div>

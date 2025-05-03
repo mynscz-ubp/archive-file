@@ -1,12 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+ion-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+ion-toolbar {
+  --background: #1c0a47;
+  --color: #ffffff;
+}
+
 .chat-content {
   --background: #f7f3f8;
   padding: 10px;
+  padding-bottom: 70px; // supaya isi tidak tertutup input
 }
 
 .message-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding-top: 20px; // Tambahkan ini
 }
 
 .message-row {

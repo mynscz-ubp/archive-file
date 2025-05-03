@@ -15,7 +15,7 @@
     <div class="center-section">
       <div class="title">Approvals Document</div>
       <div class="pending-box">
-        <div class="pending-number">1</div>
+        <div class="pending-number">{{ getPendingCount() }}</div>
         <div class="pending-text">Menunggu<br />Persetujuan</div>
       </div>
     </div>
@@ -27,27 +27,16 @@
       <ion-card-content>
         <ion-list>
           <ion-item
+            *ngFor="let s of submissions"
             button
-            (click)="goToRiwayatDetail({judul: 'Surat Cuti', status: 'Disetujui'})"
+            (click)="goToRiwayatDetail(s)"
           >
             <ion-icon name="star-outline" slot="start"></ion-icon>
             <ion-label>
-              <h2>Surat Cuti</h2>
-              <p>HRD (DOCX)</p>
+              <h2>{{ s.judul }}</h2>
+              <p>{{ s.dept }} ({{ s.ext }})</p>
             </ion-label>
-            <ion-text color="success">Disetujui</ion-text>
-          </ion-item>
-
-          <ion-item
-            button
-            (click)="goToRiwayatDetail({judul: 'Surat Keluhan', status: 'Ditolak'})"
-          >
-            <ion-icon name="star-outline" slot="start"></ion-icon>
-            <ion-label>
-              <h2>Surat Keluhan</h2>
-              <p>GA (DOCX)</p>
-            </ion-label>
-            <ion-text color="danger">Ditolak</ion-text>
+            <ion-text [color]="getColor(s.status)"> {{ s.status }} </ion-text>
           </ion-item>
         </ion-list>
       </ion-card-content>
