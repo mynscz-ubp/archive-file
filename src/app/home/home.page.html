@@ -33,4 +33,11 @@
       </ion-button>
     </div>
   </div>
+  <ion-alert
+    [isOpen]="showAlert"
+    header="Login Gagal"
+    message="Username atau password salah."
+    buttons="['OK']"
+    (didDismiss)="showAlert = false"
+  ></ion-alert>
 </ion-content>

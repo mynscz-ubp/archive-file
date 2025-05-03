@@ -26,7 +26,10 @@
       </ion-card-header>
       <ion-card-content>
         <ion-list>
-          <ion-item>
+          <ion-item
+            button
+            (click)="goToRiwayatDetail({judul: 'Surat Cuti', status: 'Disetujui'})"
+          >
             <ion-icon name="star-outline" slot="start"></ion-icon>
             <ion-label>
               <h2>Surat Cuti</h2>
@@ -35,25 +38,10 @@
             <ion-text color="success">Disetujui</ion-text>
           </ion-item>
 
-          <ion-item>
-            <ion-icon name="star-outline" slot="start"></ion-icon>
-            <ion-label>
-              <h2>Surat Rekomendasi</h2>
-              <p>HRD (PDF)</p>
-            </ion-label>
-            <ion-text color="success">Disetujui</ion-text>
-          </ion-item>
-
-          <ion-item>
-            <ion-icon name="star-outline" slot="start"></ion-icon>
-            <ion-label>
-              <h2>Surat Cuti</h2>
-              <p>HRD (PDF)</p>
-            </ion-label>
-            <ion-text color="danger">Ditolak</ion-text>
-          </ion-item>
-
-          <ion-item>
+          <ion-item
+            button
+            (click)="goToRiwayatDetail({judul: 'Surat Keluhan', status: 'Ditolak'})"
+          >
             <ion-icon name="star-outline" slot="start"></ion-icon>
             <ion-label>
               <h2>Surat Keluhan</h2>

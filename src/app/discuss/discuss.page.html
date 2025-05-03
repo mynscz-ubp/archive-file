@@ -1,13 +1,58 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>discuss</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <ion-header>
     <ion-toolbar>
-      <ion-title size="large">discuss</ion-title>
+      <ion-buttons slot="start">
+        <ion-button fill="clear" (click)="openMenu()">
+          <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      <ion-title>Chat</ion-title>
+      <ion-buttons slot="end">
+        <ion-icon slot="icon-only" name="attach-outline"></ion-icon>
+        <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
+
+  <ion-content class="chat-content">
+    <div class="message-list">
+      <div class="message-row received">
+        <div class="avatar"></div>
+        <div class="bubble">Hai</div>
+      </div>
+
+      <div class="message-row received">
+        <div class="avatar"></div>
+        <div class="bubble">Ada info?</div>
+      </div>
+
+      <div class="message-row received">
+        <div class="avatar"></div>
+        <div class="bubble image">
+          <img src="assets/icon/sample-content.png" />
+        </div>
+      </div>
+
+      <div class="message-row sent">
+        <div class="bubble">Iya ada!</div>
+      </div>
+
+      <div class="message-row sent">
+        <div class="bubble">Cek ya</div>
+      </div>
+    </div>
+
+    <div class="chat-input">
+      <ion-item lines="none">
+        <ion-buttons slot="start">
+          <ion-icon name="add-outline"></ion-icon>
+          <ion-icon name="happy-outline"></ion-icon>
+        </ion-buttons>
+        <ion-input placeholder="Message"></ion-input>
+        <ion-buttons slot="end">
+          <ion-icon name="mic-outline"></ion-icon>
+        </ion-buttons>
+      </ion-item>
+    </div>
+  </ion-content>
 </ion-content>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   standalone: false,
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./approval.page.scss'],
 })
 export class ApprovalPage implements OnInit {
-  constructor() {}
+  constructor(private navCtrl: NavController) {}
 
+  goToRiwayatDetail(item: any) {
+    this.navCtrl.navigateForward('/riwayat');
+  }
   ngOnInit() {}
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MenuController } from '@ionic/angular';
 @Component({
   standalone: false,
   selector: 'app-discuss',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./discuss.page.scss'],
 })
 export class DiscussPage implements OnInit {
-  constructor() {}
+  constructor(private menuController: MenuController) {}
+
+  openMenu() {
+    this.menuController.open();
+  }
 
   ngOnInit() {}
 }

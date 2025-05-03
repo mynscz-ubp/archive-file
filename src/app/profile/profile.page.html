@@ -21,22 +21,22 @@
       <ion-card-content>
         <ion-item>
           <ion-label position="stacked">Nama Karyawan</ion-label>
-          <ion-input value="Piyan Setiawan" readonly></ion-input>
+          <ion-input [value]="user.nama" readonly></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="stacked">NIP</ion-label>
-          <ion-input value="123234345456567" readonly></ion-input>
+          <ion-input [value]="user.nip" readonly></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="stacked">Jabatan</ion-label>
-          <ion-input value="Staff Administrasi" readonly></ion-input>
+          <ion-input [value]="user.jabatan" readonly></ion-input>
         </ion-item>
 
         <ion-item>
           <ion-label position="stacked">Email</ion-label>
-          <ion-input value="PiyanSetiawan32@gmail.com" readonly></ion-input>
+          <ion-input [value]="user.email" readonly></ion-input>
         </ion-item>
       </ion-card-content>
     </ion-card>

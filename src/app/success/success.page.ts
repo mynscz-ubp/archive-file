@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -7,26 +7,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './success.page.html',
   styleUrls: ['./success.page.scss'],
 })
-export class SuccessPage implements OnInit {
-  suratType: string = '';
+export class SuccessPage {
+  suratType: string;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
-
-  ngOnInit() {
-    const param = this.route.snapshot.paramMap.get('type');
-    if (param) {
-      this.suratType = this.formatJudul(param);
-    }
+  constructor(private route: ActivatedRoute, private router: Router) {
+    this.suratType = this.route.snapshot.queryParamMap.get('type') || 'Surat';
   }
 
   goBack() {
-    this.router.navigate(['/ajukan']);
-  }
-
-  formatJudul(text: string): string {
-    return text
-      .split('-')
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
+    this.router.navigate(['/pengajuan']); // Ganti sesuai halaman utama kamu
   }
 }

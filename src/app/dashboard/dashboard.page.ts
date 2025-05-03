@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: false,
@@ -7,11 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.page.scss'],
 })
 export class DashboardPage implements OnInit {
-  outputtext: any;
-  constructor() {}
+  username: string = '';
+
+  constructor(private router: Router) {}
 
   ngOnInit() {
-    this.outputtext = localStorage.getItem('name');
-    console.log('Ini Hasil dari Data LocalStorage ==>' + this.outputtext);
+    const nav = this.router.getCurrentNavigation();
+    const state = nav?.extras?.state;
+
+    if (state?.['username']) {
+      this.username = state['username'];
+    } else {
+      // Ambil dari localStorage kalau tidak ada di state (misalnya karena refresh halaman)
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+        const user = JSON.parse(storedUser);
+        this.username = user.nama;
+      }
+    }
   }
 }

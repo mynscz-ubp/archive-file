@@ -7,7 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  constructor() {}
+  user = {
+    nama: '',
+    nip: '',
+    jabatan: '',
+    email: '',
+  };
 
-  ngOnInit() {}
+  ngOnInit() {
+    const storedUser = localStorage.getItem('user');
+    if (storedUser) {
+      this.user = JSON.parse(storedUser);
+    }
+  }
 }

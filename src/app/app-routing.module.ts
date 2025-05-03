@@ -57,6 +57,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./success/success.module').then((m) => m.SuccessPageModule),
   },
+  {
+    path: 'riwayat',
+    loadChildren: () =>
+      import('./riwayat/riwayat.module').then((m) => m.RiwayatPageModule),
+  },
 ];
 
 @NgModule({

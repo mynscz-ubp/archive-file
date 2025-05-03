@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+ion-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+ion-toolbar {
+  --background: #1c0a47;
+  --color: #ffffff;
+}
+
+ion-avatar img {
+  width: 50px;
+  height: 50px;
+}
+
+.approvals-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.submission-history-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.center-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 16px 0 24px;
+}
+
+.pending-box {
+  background-color: #5b7aa3;
+  color: white;
+  border-radius: 16px;
+  padding: 16px;
+  width: 60%;
+  max-width: 200px;
+  text-align: center;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.pending-number {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.pending-text {
+  font-size: 14px;
+  margin-top: 8px;
+  line-height: 1.2;
+}
+
+ion-card {
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  padding: 0 16px; /* Jaga isi agar tidak nempel tepi */
+  margin: 0 auto 16px auto; /* Tengah + spasi bawah */
+  border-radius: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.history-header {
+  background-color: #1c0a47;
+  color: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  padding: 16px;
+}
+
+ion-card-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+ion-list ion-item {
+  --background: #ffffff;
+  --color: #000000;
+  border-bottom: 1px solid #eee;
+}
+
+ion-item ion-icon {
+  font-size: 22px;
+  color: #1c0a47;
+}
+
+ion-label h2 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+ion-label p {
+  font-size: 12px;
+  color: gray;
+  margin-top: 2px;
+}
+
+ion-text[color="success"] {
+  font-weight: bold;
+  color: #2dd36f;
+}
+
+ion-text[color="danger"] {
+  font-weight: bold;
+  color: #eb445a;
+}
+
+.card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: #333;
+}
