@@ -63,7 +63,16 @@ export class HomePage {
     if (user) {
       console.log('Login berhasil!');
       localStorage.setItem('user', JSON.stringify(user));
-      this.router.navigate(['/dashboard']);
+
+      const role = user.username === 'admin' ? 'admin' : 'user';
+      localStorage.setItem('role', role);
+
+      // Redirect ke dashboard sesuai role
+      if (role === 'admin') {
+        this.router.navigate(['/dashboard-admin']);
+      } else {
+        this.router.navigate(['/dashboard']);
+      }
     } else {
       console.log('Login gagal.');
       this.showAlert = true;

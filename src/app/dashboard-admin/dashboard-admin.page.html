@@ -1,0 +1,49 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="home-page">
+    <div class="greeting">
+      <h1>Dashboard</h1>
+    </div>
+
+    <div class="status-cards">
+      <div class="status-card">
+        <div class="count">70</div>
+        <div class="label">Total Surat Masuk</div>
+      </div>
+      <div class="status-card">
+        <div class="count">43</div>
+        <div class="label">Surat Cuti Diajukan</div>
+      </div>
+      <div class="status-card">
+        <div class="count">15</div>
+        <div class="label">Surat Rekomendasi Diajukan</div>
+      </div>
+    </div>
+
+    <div class="section-title">Recent Activities</div>
+    <ion-list class="activity-list">
+      <ion-item>
+        <ion-icon name="document-text-outline" slot="start"></ion-icon>
+        <h2>Surat Ket-Kerja Diajukan</h2>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="document-text-outline" slot="start"></ion-icon>
+        <h2>Surat Keluhan Diajukan</h2>
+      </ion-item>
+    </ion-list>
+
+    <div class="section-title">Jumlah Surat Bulanan</div>
+    <!-- Insert your chart component here -->
+  </ion-content>
+</ion-content>

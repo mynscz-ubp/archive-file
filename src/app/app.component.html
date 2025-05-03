@@ -1,5 +1,51 @@
 <ion-content [fullscreen]="true"></ion-content>
-<ion-menu contentId="main-content" type="overlay">
+
+<!-- Menu untuk ADMIN -->
+<ion-menu *ngIf="role === 'admin'" contentId="main-content" type="overlay">
+  <ion-content>
+    <ion-list>
+      <ion-item routerLink="/dashboard-admin">
+        <ion-icon name="home-outline" slot="start"></ion-icon>
+        <ion-label>Dashboard</ion-label>
+      </ion-item>
+      <ion-item (click)="toggleDocument()" detail>
+        <ion-icon name="document-text-outline" slot="start"></ion-icon>
+        <ion-label>Documents</ion-label>
+        <ion-icon
+          [name]="documentExpanded ? 'chevron-up' : 'chevron-down'"
+          slot="end"
+        ></ion-icon>
+      </ion-item>
+      <ion-list *ngIf="documentExpanded" class="submenu">
+        <ion-item routerLink="/template-admin">
+          <ion-label>Template</ion-label>
+        </ion-item>
+        <ion-item routerLink="/nosurat">
+          <ion-label>No Surat</ion-label>
+        </ion-item>
+      </ion-list>
+      <ion-item routerLink="/approval-admin">
+        <ion-icon name="checkmark-done-outline" slot="start"></ion-icon>
+        <ion-label>Approvals</ion-label>
+      </ion-item>
+      <ion-item routerLink="/discuss">
+        <ion-icon name="chatbubble-ellipses-outline" slot="start"></ion-icon>
+        <ion-label>Discuss</ion-label>
+      </ion-item>
+      <ion-item routerLink="/users">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-label>User</ion-label>
+      </ion-item>
+      <ion-item (click)="logout()">
+        <ion-icon name="power-outline" slot="start"></ion-icon>
+        <ion-label>Log Out</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<!-- Menu untuk USER -->
+<ion-menu *ngIf="role === 'user'" contentId="main-content" type="overlay">
   <ion-content>
     <ion-list>
       <ion-item routerLink="/dashboard">
@@ -34,10 +80,10 @@
         <ion-icon name="person-outline" slot="start"></ion-icon>
         <ion-label>Profile</ion-label>
       </ion-item>
-      <ion-item (click)="logout()"
-        ><ion-icon name="power-outline" slot="start"></ion-icon>
-        <ion-label>Log Out</ion-label></ion-item
-      >
+      <ion-item (click)="logout()">
+        <ion-icon name="power-outline" slot="start"></ion-icon>
+        <ion-label>Log Out</ion-label>
+      </ion-item>
     </ion-list>
   </ion-content>
 </ion-menu>

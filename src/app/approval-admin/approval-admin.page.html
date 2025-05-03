@@ -1,0 +1,24 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <h2 class="title">Approval</h2>
+
+    <ion-card *ngFor="let surat of suratList">
+      <ion-card-content class="ion-text-center">
+        <div class="surat-box">{{ surat.judul }}</div>
+        <ion-button class="lihat-button" expand="block">Lihat</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

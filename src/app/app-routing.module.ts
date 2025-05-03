@@ -62,6 +62,26 @@ const routes: Routes = [
     loadChildren: () =>
       import('./riwayat/riwayat.module').then((m) => m.RiwayatPageModule),
   },
+  {
+    path: 'dashboard-admin',
+    loadChildren: () => import('./dashboard-admin/dashboard-admin.module').then( m => m.DashboardAdminPageModule)
+  },
+  {
+    path: 'nosurat',
+    loadChildren: () => import('./nosurat/nosurat.module').then( m => m.NosuratPageModule)
+  },
+  {
+    path: 'approval-admin',
+    loadChildren: () => import('./approval-admin/approval-admin.module').then( m => m.ApprovalAdminPageModule)
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./users/users.module').then( m => m.UsersPageModule)
+  },
+  {
+    path: 'template-admin',
+    loadChildren: () => import('./template-admin/template-admin.module').then( m => m.TemplateAdminPageModule)
+  },
 ];
 
 @NgModule({

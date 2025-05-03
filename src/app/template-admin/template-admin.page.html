@@ -1,0 +1,50 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding" [fullscreen]="true">
+    <h2 class="title">Template Document</h2>
+
+    <div class="search-upload-bar">
+      <ion-searchbar placeholder="search..."></ion-searchbar>
+      <ion-button fill="outline" class="upload-btn">
+        <ion-icon slot="start" name="document-attach-outline"></ion-icon>
+        Upload File
+      </ion-button>
+    </div>
+
+    <ion-card>
+      <ion-card-header class="card-header">
+        <ion-card-title>Template Document</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <ion-item *ngFor="let doc of documents">
+            <ion-icon slot="start" name="star-outline"></ion-icon>
+            <ion-label>
+              <h3>{{ doc.judul }}</h3>
+              <p>{{ doc.dept }} ({{ doc.tipe }})</p>
+            </ion-label>
+            <div class="actions">
+              <ion-button fill="clear" size="small" color="success"
+                >Edit</ion-button
+              >
+              <ion-button fill="clear" size="small" color="danger"
+                >Hapus</ion-button
+              >
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </ion-content>
+</ion-content>

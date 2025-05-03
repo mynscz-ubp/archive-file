@@ -1,0 +1,56 @@
+/* styles.scss atau global.scss */
+
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+ion-title {
+  font-family: "Luckiest Guy", cursive;
+  font-size: 22px;
+  text-align: center;
+  letter-spacing: 1px;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+ion-card {
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 16px;
+}
+
+.surat-box {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.input-surat {
+  --background: #ffffff;
+  --border-color: #ddd;
+  --color: #000;
+  font-size: 14px;
+  padding: 6px 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+}
+
+.lihat-button {
+  border-radius: 8px;
+  height: 36px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+ion-avatar img {
+  width: 40px;
+  height: 40px;
+}

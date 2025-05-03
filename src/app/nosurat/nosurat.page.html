@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+      <ion-title>AVENTREX</ion-title>
+      <ion-avatar slot="end">
+        <img src="assets/icon/logo.png" />
+      </ion-avatar>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <h2 class="title">Edit Nomor Surat</h2>
+
+    <!-- Header tabel -->
+    <div class="table-header">
+      <div>Jenis Surat</div>
+      <div>Prefix</div>
+      <div>No Terakhir</div>
+    </div>
+
+    <!-- Baris data -->
+    <div class="table-row" *ngFor="let surat of daftarSurat">
+      <div class="cell label">{{ surat.nama }}</div>
+      <div class="cell prefix">{{ surat.prefix }}</div>
+      <div class="cell nomor">{{ surat.nomor }}</div>
+    </div>
+
+    <ion-item lines="none" class="checkbox-item">
+      <ion-checkbox
+        slot="start"
+        [(ngModel)]="resetSetiapTahun"
+        color="primary"
+      ></ion-checkbox>
+      <ion-label>Reset Nomor Setiap Tahun</ion-label>
+    </ion-item>
+
+    <ion-card>
+      <ion-card-header class="card-header">
+        <ion-card-title>Preview</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-input
+          readonly
+          [value]="previewNomor"
+          fill="outline"
+          shape="round"
+        ></ion-input>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-button expand="block" color="dark">Simpan</ion-button>
+  </ion-content>
+</ion-content>
