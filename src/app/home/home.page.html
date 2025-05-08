@@ -8,9 +8,9 @@
     <div class="login-form">
       <ion-item class="input-item" lines="none">
         <ion-input
-          [(ngModel)]="name"
+          [(ngModel)]="email"
           type="text"
-          placeholder="Username"
+          placeholder="Email"
         ></ion-input>
       </ion-item>
 
@@ -37,7 +37,7 @@
     [isOpen]="showAlert"
     header="Login Gagal"
     message="Username atau password salah."
-    buttons="['OK']"
-    (didDismiss)="showAlert = false"
+    buttons="OK"
+    (didDismiss)="onAlertDismiss()"
   ></ion-alert>
 </ion-content>

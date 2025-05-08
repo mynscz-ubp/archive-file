@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,73 +10,45 @@ import { NavController } from '@ionic/angular';
   standalone: false,
 })
 export class HomePage {
-  name: string = '';
+  email: string = '';
   password: string = '';
   showPassword: boolean = false;
   showAlert: boolean = false;
 
-  validUsers = [
-    {
-      username: 'admin',
-      password: '123',
-      nama: 'Admin',
-      nip: '000000001',
-      jabatan: 'Administrator',
-      email: 'admin@aventrex.com',
-    },
-    {
-      username: 'piyan',
-      password: '321',
-      nama: 'Piyan Setiawan',
-      nip: '123234345456567',
-      jabatan: 'Staff Administrasi',
-      email: 'PiyanSetiawan32@gmail.com',
-    },
-    {
-      username: 'sari',
-      password: '111',
-      nama: 'Sari Putri',
-      nip: '987654321001',
-      jabatan: 'HRD',
-      email: 'sari.putri@aventrex.com',
-    },
-    {
-      username: 'budi',
-      password: '222',
-      nama: 'Budi Santoso',
-      nip: '112233445566',
-      jabatan: 'IT Support',
-      email: 'budi.s@aventrex.com',
-    },
-  ];
-
-  constructor(private router: Router, private navCtrl: NavController) {}
+  constructor(
+    private router: Router,
+    private navCtrl: NavController,
+    private authService: AuthService
+  ) {}
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
 
   doSubmit() {
-    const user = this.validUsers.find(
-      (u) => u.username === this.name && u.password === this.password
-    );
+    this.authService.login(this.email, this.password).subscribe({
+      next: (response: any) => {
+        const { token, user } = response;
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', JSON.stringify(user));
+        const role = user.email === 'admin@aventrex.com' ? 'admin' : 'user';
+        localStorage.setItem('role', role);
 
-    if (user) {
-      console.log('Login berhasil!');
-      localStorage.setItem('user', JSON.stringify(user));
+        if (role === 'admin') {
+          this.router.navigate(['/dashboard-admin']);
+        } else {
+          this.router.navigate(['/dashboard']);
+        }
+      },
+      error: (err) => {
+        console.error('Login gagal', err);
+        this.showAlert = true;
+      },
+    });
+  }
 
-      const role = user.username === 'admin' ? 'admin' : 'user';
-      localStorage.setItem('role', role);
-
-      // Redirect ke dashboard sesuai role
-      if (role === 'admin') {
-        this.router.navigate(['/dashboard-admin']);
-      } else {
-        this.router.navigate(['/dashboard']);
-      }
-    } else {
-      console.log('Login gagal.');
-      this.showAlert = true;
-    }
+  // ⬇⬇ Tambahkan fungsi ini di bawah doSubmit()
+  onAlertDismiss() {
+    this.showAlert = false;
   }
 }
